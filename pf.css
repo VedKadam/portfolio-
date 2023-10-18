@@ -1,0 +1,963 @@
+ @import url('https://fonts.googleapis.com/css2?family=Poppins&family=Roboto:wght@300&display=swap');
+
+ @font-face {
+  font-family: 'Bauziet Norm Bold';
+  src: url('/img/Bauziet\ Norm\ Bold.ttf') format('truetype');
+  /* Add other font formats and paths as needed for cross-browser support */
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins";
+}
+
+body{
+    min-height: 100vh;
+    background: linear-gradient(to top, #0f0c29, #302b63, #24243e) no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1.3rem 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.header::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+     background: rgba(0,0,0, .1);
+    backdrop-filter: blur(50px);
+    z-index: -1;
+}
+
+.header::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, .4), transparent);
+    transition: .5s;
+}
+
+.header:hover::after{
+    left: 100%;
+}
+
+.logo{
+    font-size: 2rem;
+    font-family: 'Bauziet Norm Bold', sans-serif;
+    background: linear-gradient(144deg, #AF40FF, #5B42F3 50%, #00DDEB); 
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-decoration: none;
+    font-weight: 700;
+    letter-spacing: 3px;
+}
+
+.navbar a{
+    font-size: 1.15rem;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 2.5rem;
+}
+.navbar a:hover{
+  color: #4A00E0;
+  transition: .5s;
+}
+
+
+
+#check{
+  display: none;
+}
+
+.icons{
+  position: absolute;
+  right: 5%;
+  font-size: 2.8rem;
+  color: #fff;
+  cursor: pointer;
+  display: none;
+}
+
+/* BREAKPOINTS */
+
+@media (max-width: 992px){
+  .header{
+      padding: 1.3rem 5%;
+  }
+}
+
+@media (max-width: 768px){
+  .icons{
+      display: inline-flex;
+  }
+
+  #check:checked~.icons #menu-icon{
+      display: none;
+  }
+
+  .icons #close-icon{
+      display: none;
+  }
+  #check:checked~.icons #close-icon{
+      display: block;
+  }
+  .navbar{
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      height: 0;
+      background: rgba(0,0,0, .1);
+      backdrop-filter: blur(50px);
+      box-shadow: 0 .5rem 1rem  rgba(0,0,0, .1) ;
+      overflow: hidden;
+      transition: .3s ease;
+  }
+  #check:checked~.navbar{
+      height: 17.7rem;
+  }
+  .navbar a{
+      display: block;
+      font-size: 1.1rem;
+      margin: 1.5rem 0;
+      text-align: center;
+      transform: translateY(-50px);
+      opacity: 0;
+      transition: .3s ease;
+  }
+  #check:checked~.navbar a{
+      transform: translateY(0);
+      opacity: 1;
+      transition-delay: calc(.15s * var(--i));
+  }
+
+}
+
+@media  screen and (max-width: 768px) {
+  .intro h1{
+    font-size: 1rem;
+  margin-bottom: 10px;
+  background: linear-gradient(to left,  #74ebd5, #acb6e5); 
+  -webkit-background-clip: text;
+  color: transparent;
+  }
+}
+
+
+
+/* Define the styles for your sections */
+section {
+  height: 100vh;
+  display: block;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  scroll-behavior: smooth; /* Enable smooth scrolling */
+ 
+}
+/* Section animation eds here    */
+
+/* css for scrollbar */
+::-webkit-scrollbar{
+  width: 15px;
+}
+::-webkit-scrollbar-track{
+  background: #251043;
+}
+
+::-webkit-scrollbar-thumb{
+  background: linear-gradient( #0575e6, #021b79);
+  border-radius: 30px;
+}
+/* Ends here  */
+
+
+
+/* css for HOME section  */
+/* Add styles for the #home section */
+#home {
+ 
+  padding: 18%;
+  margin-bottom: 0;
+}
+
+/* Create a container for the content */
+.content {
+  display: flex;
+  /* justify-content: space-between; */
+  align-items: center;
+}
+
+/* Style for the introductory text on the left */
+.intro {
+  flex: 1;
+}
+
+#salutation{
+  color: white;
+}
+
+/* Style for the image on the right */
+.image {
+  flex: 1;
+  text-align: right;
+}
+
+/* Add some spacing and styling to the text */
+.intro h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+  background: linear-gradient(to left,  #74ebd5, #acb6e5); 
+  -webkit-background-clip: text;
+  color: transparent;
+  
+}
+#ml{
+  display: inline-block;
+  background: linear-gradient(to left,  #74ebd5, #acb6e5); 
+  -webkit-background-clip: text;
+  color: transparent; 
+  font-size: 1.2rem;    
+}
+
+.intro p {
+  display: inline;
+  font-size: 1rem;
+  color: #fff;
+}
+
+/* Style the image */
+.circular-image {
+  width: 400px !important; /* Set the desired width */
+  height: 400px !important; /* Set the desired height */
+  border-radius: 65% 35% 47% 53% / 30% 26% 74% 70% ; /* Creates a blob shape with different radii */
+  overflow: hidden !important; /* Hide overflow */
+  border: 4px solid #acb6e5 !important; /* Optional: Add a border around the blob */
+  float: right !important; /* Float the image to the right */
+  margin-left: 10px !important; /* Adjust the margin to reduce space between the image and text */
+  box-shadow: 0 0 20px #acb6e5; /* Adjust color and intensity as needed */
+}
+
+/* Style the image inside the blob container */
+.circular-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensure the image covers the blob shape */
+}
+
+
+
+  /* css for download-button */
+  .download-button {
+    background-color: #33006f;
+    color: white;
+    padding: 10px 20px;
+    border: 2px solid black;
+    border-radius: 30px;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+    transition: border-color 0.3s, box-shadow 0.3s;
+  }
+  
+  .download-button:hover {
+    background-image: linear-gradient(144deg, #AF40FF, #5B42F3 50%, #00DDEB);
+    box-shadow: 10px 10px 10px #1111118e;
+    border-radius: 20px;
+  }
+  
+  .download-button span {
+    background-color: rgb(5, 6, 45);
+    padding: 16px 16px;
+    border-radius: 30px;
+    width: 100%;
+    height: 100%;
+  }
+
+  @media (min-width: 768px) {
+    .download-button {
+     
+      font-size: 16px;
+      width: 50%;
+    }
+    
+    
+  }
+
+  .socials {
+    font-size: 24px;
+   
+}
+
+.socials a {
+    display: inline-block;
+    margin: 0 10px;
+    text-decoration: none;
+    color: #00DDEB; /* Icon color */
+    transition: transform 0.3s, color 0.3s; /* Add transitions for hover effect */
+}
+
+.socials a i {
+    font-size: 1.5em; /* Increase the icon size */
+}
+
+.socials a:hover {
+    transform: scale(1.2); /* Enlarge the icon on hover */
+    color: #007bff; /* Change color on hover (e.g., blue) */
+}
+
+
+
+/*  =========================================================STYLE FOR PROJECTS SECTION========================================================== */
+
+/* Add this CSS to your pf.css file */
+
+
+#projects{
+  max-height: 100vh;
+  overflow: auto;
+  margin-top: 0;
+}
+.scrollable-content {
+  /* height: 100%; Fill the entire section height */
+  height: calc(100vh - 100px);
+  overflow: auto; /* Add a scrollbar only to the inner content if needed */
+}
+.container {
+  /* min-height: 100vh; */
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 100px 0;
+  margin-top: -300px;
+
+  /* background-color: #111; */
+  
+}
+.timeline {
+  width: 80%;
+  height: auto;
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+  margin-top: 400px;
+}
+#pj{                        /*   Projects Title      */
+margin-bottom: 10%;
+color: white;
+}
+
+.timeline ul {
+  list-style: none;
+}
+.timeline ul li {
+  padding: 20px;
+  background-color: #1e1f22;
+  /* background-image: linear-gradient(144deg, #55e7f8, #8579ec, #d1c2f9, #55e7f8); */
+  color: white;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+.timeline ul li:last-child {
+  margin-bottom: 0;
+}
+.timeline-content h1 {
+  font-weight: 500;
+  font-size: 25px;
+  line-height: 30px;
+  margin-bottom: 10px;
+}
+.timeline-content p {
+  font-size: 16px;
+  line-height: 30px;
+  font-weight: 300;
+}
+.timeline-content .date {
+  font-size: 12px;
+  font-weight: 300;
+  margin-bottom: 10px;
+  letter-spacing: 2px;
+}
+@media only screen and (min-width: 768px) {
+  .timeline:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 100%;
+    background-color: gray;
+  }
+  .timeline ul li {
+    width: 50%;
+    position: relative;
+    margin-bottom: 50px;
+  }
+  .timeline ul li:nth-child(odd) {
+    float: left;
+    clear: right;
+    transform: translateX(-30px);
+    border-radius: 20px 0px 20px 20px;
+  }
+  .timeline ul li:nth-child(even) {
+    float: right;
+    clear: left;
+    transform: translateX(30px);
+    border-radius: 0px 20px 20px 20px;
+  }
+  .timeline ul li::before {
+    content: "";
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background-color: gray;
+    top: 0px;
+  }
+  .timeline ul li:nth-child(odd)::before {
+    transform: translate(50%, -50%);
+    right: -30px;
+  }
+  .timeline ul li:nth-child(even)::before {
+    transform: translate(-50%, -50%);
+    left: -30px;
+  }
+  .timeline-content .date {
+    position: absolute;
+    top: -30px;
+    color: white;
+  }
+  .timeline ul li:hover::before {
+    background-color: aqua;
+  }
+}
+
+#tits{
+  background-image: linear-gradient(144deg, #55e7f8, #8579ec, #d1c2f9, #55e7f8);
+  -webkit-background-clip: text;
+  color: transparent;
+  font-weight: bold;
+}
+
+.button1, .button2{
+  border: 2px solid black;
+  border-radius: 30px;
+  font-size: 1vw;
+  padding: 2%;
+  text-decoration: none;
+  background-color: #33006f;
+  color: #40E0D0;
+}
+.button1:hover{
+  background-image: linear-gradient(144deg, #AF40FF, #5B42F3 50%, #00DDEB);
+  color: white; 
+}
+ .button2:hover{
+  /* background-color: linear-gradient(144deg, #AF40FF, #5B42F3 50%, #00DDEB); */
+  background-image: linear-gradient(144deg, #AF40FF, #5B42F3 50%, #00DDEB);
+  color: white;
+}
+
+
+/* ========================================================= STYLE FOR PROJECTS SECTION ENDS HERE================================================ */
+
+/* style for skills section */
+#skills {
+  max-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  overflow: auto;
+  max-height: 80vh;
+  
+}
+
+#skills h1 {
+  margin-top: 0;
+  color: white;
+}
+
+.skill-icons {
+  display: flex;
+  flex-wrap: wrap; /* Wrap the icons to the next row */
+  justify-content: center;
+  gap: 20px; /* Adjust the gap between icons as needed */
+  margin-top: 20px; /* Adjust the margin as needed */
+  
+}
+
+.skill-icon {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: #20153a;
+  overflow: hidden;
+  position: relative;
+  transition: border-radius 0.3s, background 0.3s;
+}
+
+.skill-icon:hover {
+  border-radius: 50%;
+  background: linear-gradient(144deg, #AF40FF, #5B42F3 50%, #00DDEB);
+}
+
+.skill-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+}
+
+
+
+/* =================================================================== STYLE FOR SKILLS SECTION ENDS HERE =================================================== */
+
+
+/* Style the "About Me" section */
+
+#about {
+ display: flex;
+  padding: 50px 0;
+  text-align: center;
+  margin-left: 10%;
+  
+}
+
+/* Style the "About Me" heading */
+#abt {
+  font-size: 2rem;
+  color: white;
+  margin-bottom: 20px;
+}
+
+
+
+/* Add this CSS to your pf.css file */
+.about-content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.about-content p {
+  font-size: 20px;
+  line-height: 1.5;
+  text-align: justify;
+  padding: 10px;
+  margin: 0;
+  color: black;
+}
+
+
+
+/* Define the fade-in animation
+@keyframes fade-in {
+  from {
+      opacity: 0;
+      transform: translateY(20px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+} */
+
+
+
+
+/* CSS for contact section */
+
+#connect {
+  color: white;
+  font-size: 2rem; /* Increase font size */
+  text-align: center; /* Center-align the text */
+  margin-top: 20px; /* Add space above the heading */
+  margin-bottom: 20px; /* Add space below the heading */
+  animation: fadeInUp 1s ease, glow 2s infinite alternate; /* Apply fade-in and glowing animations */
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.7); /* Add a glowing effect */
+  
+}
+
+/* Define the fadeInUp animation */
+@keyframes fadeInUp {
+  from {
+      opacity: 0;
+      transform: translateY(20px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+/* Define the glow animation */
+@keyframes glow {
+  from {
+      text-shadow: 0 0 10px rgba(255, 255, 255, 0.7); /* Initial glow effect */
+  }
+  to {
+      text-shadow: 0 0 20px rgba(255, 255, 255, 1), 0 0 30px rgba(255, 255, 255, 0.7); /* Glowing effect */
+  }
+}
+
+
+
+
+#contact {
+ display: flex;
+  padding: 20rem; /* Add padding to the contact section */
+  text-align: center; /* Center-align text in the contact section */
+}
+
+/* Style the contact form container */
+form {
+  max-width: 50%; /* Set the maximum width for the form */
+  margin: 0 auto; /* Center the form horizontally */
+}
+
+/* Style the form input fields and labels */
+.form-group {
+  margin-bottom: 20px; /* Add spacing between form groups */
+}
+
+
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 200%; /* Make input fields and textarea full-width */
+  padding: 15px; /* Add padding to input fields and textarea */
+  border: 1px solid #ccc; /* Add a border to input fields and textarea */
+  border-radius: 5px; /* Add border radius to input fields and textarea */
+  resize: none;
+  font-size: 50%;
+}
+
+/* Style the submit button */
+#subBtn[type="submit"] {
+  background-color: #4A00E0; /* Set button background color */
+  color: #fff; /* Set button text color */
+  border: none; /* Remove button border */
+  padding: 10px 20px; /* Add padding to the button */
+  border-radius: 5px; /* Add border radius to the button */
+  cursor: pointer; /* Change cursor to pointer on hover */
+  font-size: 16px; /* Set button font size */
+  transition: background-color 0.3s ease-in-out; /* Add button background color transition */
+  font-size: 60%;
+  justify-content: center;
+}
+
+#subBtn[type="submit"]:hover {
+  background-color: #2A0080; /* Change button background color on hover */
+}
+
+
+
+/* css for cursor */
+
+
+
+
+/* CSS for the footer */
+.footer {
+  background-color: #4A00E0; /* Set footer background color */
+  color: #fff; /* Set text color in the footer */
+  text-align: center; /* Center-align text in the footer */
+  padding: 20px 0; /* Add padding to the footer */
+  font-size: 120%;
+}
+.social-footer a{
+  color: #0f0c29;
+  font-size: 2vw;
+  margin-right: 1%;
+}
+.social-footer a:hover{
+  color: #8579ec;
+}
+
+
+/* Add this CSS at the end of your existing CSS file */
+
+/* Responsive styles for smaller screens (e.g., mobile devices) */
+@media (max-width: 768px) {
+  /* HOME section */
+  #home {
+    padding: 10%;
+  }
+
+  #salutation{
+    margin-top: 40%;
+    font-size: 28px;
+  }
+  /* Decrease the font size for the introductory text */
+  .intro h1 {
+    margin-top: 5%;
+    font-size: 2rem;
+  }
+
+  #ml {
+    font-size: 1rem;
+  }
+
+  .intro p {
+    display: flex;
+    font-size: 0.8rem;
+     
+  }
+  .download-button{
+    margin-top: 110%;
+    padding: 10px 10px;
+    font-size: 3vw;
+  }
+  .socials {
+    display: flex;
+    justify-content: center; /* Center-align the icons horizontally */
+    align-items: center; /* Center-align the icons vertically */
+}
+
+.socials a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: #00DDEB; /* Icon color */
+    transition: transform 0.3s, color 0.3s; /* Add transitions for hover effect */
+}
+
+.button1, .button2{
+  font-size: 15px;
+  border-radius: 30px;
+  padding: 3%;
+}
+
+
+  /* Decrease the circular image size */
+  .circular-image {
+    width: 180px !important;
+    height: 200px !important;
+    margin-right: 50%;
+    margin-top: 160%;
+  }
+
+  /* PROJECTS section */
+  #projects{
+    margin-top: 30px;
+  }
+  .container{
+    margin-top: -400px;
+  }
+  .timeline ul li {
+    width: 100%;
+  }
+  .timeline ul li:nth-child(odd),
+  .timeline ul li:nth-child(even) {
+    float: none;
+    clear: none;
+    transform: none;
+  }
+  .timeline ul li::before {
+    display: none;
+  }
+
+  /* SKILLS section */
+  .skill-icons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+  .skill-icon {
+    width: 80px;
+    height: 80px;
+  }
+
+ /* ABOUT ME section */
+#about {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center the content horizontally */
+  text-align: center; /* Center-align the text */
+}
+
+.about-content {
+  max-width: 100%;
+  width: 80%; /* Adjust the width as needed */
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.about-content p {
+  font-size: 16px;
+  line-height: 1.5;
+  text-align: center; /* Center-align the text within the container */
+  padding: 10px;
+  margin: 0;
+  color: black;
+}
+
+  /* CONTACT section */
+  /* CONTACT section */
+#contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center the content horizontally */
+  text-align: center; /* Center-align the text */
+  padding: 5rem;
+}
+
+form {
+  max-width: 100%;
+  width: 80%; /* Adjust the width as needed */
+  margin: 0 auto; /* Center the form horizontally */
+}
+
+.form-group {
+  margin-bottom: 20px;
+  text-align: left; /* Left-align the form labels */
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 100%;
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  resize: none;
+  font-size: 16px;
+}
+
+button[type="submit"] {
+  background-color: #4A00E0;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease-in-out;
+  margin-top: 20px; /* Add space between input fields and the button */
+}
+
+
+/* Responsive styles for medium screens (e.g., tablets) */
+@media (min-width: 768px) and (max-width: 1023px) {
+  /* HOME section */
+  #home {
+    padding: 15%;
+  }
+
+  /* Increase the font size for the introductory text */
+  .intro h1 {
+    font-size: 2.5rem;
+  }
+
+  #ml {
+    font-size: 1.2rem;
+  }
+
+  .intro p {
+    font-size: 1rem;
+  }
+
+  /* Increase the circular image size */
+  .circular-image {
+    width: 300px !important;
+    height: 300px !important;
+  }
+
+  /* PROJECTS section - Adjust as needed */
+
+  /* SKILLS section - Adjust as needed */
+
+  /* ABOUT ME section - Adjust as needed */
+
+  /* CONTACT section - Adjust as needed */
+}
+
+/* Responsive styles for larger screens (e.g., desktops) */
+@media (min-width: 1024px) {
+  /* HOME section - Adjust as needed */
+
+  /* PROJECTS section - Adjust as needed */
+
+  /* SKILLS section - Adjust as needed */
+
+  /* ABOUT ME section - Adjust as needed */
+
+  /* CONTACT section - Adjust as needed */
+}
+}
+
+
+/*  animations */
+#home .content {
+  opacity: 0;
+  transform: translateY(-100%);
+  animation: slide-in 1s forwards;
+}
+
+@keyframes slide-in {
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+#about p span {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(10px);
+  animation: typing 1s ease-in-out forwards;
+}
+
+@keyframes typing {
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+#skills .skill-icon {
+  transform: scale(0);
+  transition: transform 1s ease-in-out;
+}
+
+#skills.animate .skill-icon {
+  transform: scale(1);
+}

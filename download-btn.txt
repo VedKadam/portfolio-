@@ -1,0 +1,79 @@
+ /* CSS for download button */
+
+.download-button {
+  /* align-items: center; */
+  width: 100%;
+  background: linear-gradient(144deg, #AF40FF, #5B42F3 50%, #00DDEB);
+  background-position: 1px 1px;
+  /* border: 1px solid transparent !important; */
+  border-radius: 900px;
+  box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  display: inline-flex;
+  margin: auto;
+  padding: 2px;
+  text-decoration: none;
+  cursor: pointer;
+  text-align: center;
+  text-transform: uppercase; /* Convert text to uppercase */
+  transition: background-image 0.3s ease-in-out; /* Add transition */
+}
+
+.download-button:active,
+.download-button:hover {
+  outline: 0;
+  background: linear-gradient(144deg, #5B42F3, #AF40FF 50%, #00DDEB); /* Change background on hover */
+  box-shadow: 10px 10px 10px #1111118e;
+}
+
+.download-button span {
+  background-color: rgb(5, 6, 45);
+  padding: 16px 16px;
+  border-radius: 50px;
+  width: 100%;
+  height: 100%;
+}
+
+
+
+# using webkit 
+/* css for download button */
+.download-button {
+  /* align-items: center; */
+  width: 100%;
+  background: -webkit-linear-gradient(144deg, #AF40FF, #5B42F3 50%, #00DDEB);
+  background: linear-gradient(144deg, #AF40FF, #5B42F3 50%, #00DDEB);
+  background-position: 1px 1px;
+  /* border: 1px solid transparent !important; */
+  border-radius: 900px;
+  -webkit-box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+  box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  display: inline-flex;
+  margin: auto;
+  padding: 2px;
+  text-decoration: none;
+  cursor: pointer;
+  text-align: center;
+  text-transform: uppercase; /* Convert text to uppercase */
+  transition: background-image 0.3s ease-in-out; /* Add transition */
+}
+
+.download-button:active,
+.download-button:hover {
+  outline: 0;
+  background: -webkit-linear-gradient(144deg, #5B42F3, #AF40FF 50%, #00DDEB);
+  background: linear-gradient(144deg, #5B42F3, #AF40FF 50%, #00DDEB); /* Change background on hover */
+  -webkit-box-shadow: 10px 10px 10px #1111118e;
+  box-shadow: 10px 10px 10px #1111118e;
+}
+
+.download-button span {
+  background-color: rgb(5, 6, 45);
+  padding: 16px 16px;
+  border-radius: 50px;
+  width: 100%;
+  height: 100%;
+}
