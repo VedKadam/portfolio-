@@ -252,10 +252,11 @@ section {
 }
 
 /* Style the image */
+/* Style the image */
 .circular-image {
   width: 400px !important; /* Set the desired width */
   height: 400px !important; /* Set the desired height */
-  border-radius: 65% 35% 47% 53% / 30% 26% 74% 70% ; /* Creates a blob shape with different radii */
+  border-radius: 65% 35% 47% 53% / 30% 26% 74% 70%; /* Creates a blob shape with different radii */
   overflow: hidden !important; /* Hide overflow */
   border: 4px solid #acb6e5 !important; /* Optional: Add a border around the blob */
   float: right !important; /* Float the image to the right */
@@ -268,6 +269,7 @@ section {
   width: 100%;
   height: 100%;
   object-fit: cover; /* Ensure the image covers the blob shape */
+  object-position: top; /* Adjust this to center the important part of the image */
 }
 
 
